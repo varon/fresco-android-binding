@@ -123,9 +123,9 @@
     AllocChunk
   </attr>
   <attr
-      path="/api/package[@name='com.facebook.imagepipeline.memory']/class[@name='NativePooledByteBufferOutputStream']/method[@name='toByteBuffer' and count(parameter)=0]"
+      path="/api/package[@name='com.facebook.imagepipeline.memory']/class[@name='MemoryPooledByteBufferOutputStream']/method[@name='toByteBuffer' and count(parameter)=0]"
       name="managedName">
-    ToNativePooledByteBuffer
+    ToMemoryPooledByteBuffer
   </attr>
   <attr
       path="/api/package[@name='com.facebook.imagepipeline.producers']/class[@name='HttpUrlConnectionNetworkFetcher']/method[@name='fetch' and count(parameter)=2 and parameter[1][@type='com.facebook.imagepipeline.producers.FetchState'] and parameter[2][@type='com.facebook.imagepipeline.producers.NetworkFetcher.Callback']]/parameter[1]"

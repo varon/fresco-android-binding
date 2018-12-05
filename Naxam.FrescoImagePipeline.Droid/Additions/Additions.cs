@@ -163,15 +163,13 @@ namespace Com.Facebook.Imagepipeline.Memory
 	}
 
 
-	//    partial class NativePooledByteBufferOutputStream
-	//    {
-	//        public override unsafe Com.Facebook.Common.Memory.IPooledByteBuffer ToByteBuffer()
-	//        {
-	//            return ToNativePooledByteBuffer();
-	//        }
-	//
-	//    }
-	//
+	partial class MemoryPooledByteBufferOutputStream
+	{
+	    public override unsafe Com.Facebook.Common.Memory.IPooledByteBuffer ToByteBuffer()
+	    {
+	        return ToMemoryPooledByteBuffer();
+	    }
+	}
 	}
 	
 	namespace Com.Facebook.Imagepipeline.Producers
