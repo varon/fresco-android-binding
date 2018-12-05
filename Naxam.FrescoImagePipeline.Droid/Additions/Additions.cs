@@ -64,61 +64,68 @@ namespace Com.Facebook.Imagepipeline.Memory
 	        return NewOutputStream(size);
 	    }
 	}
-//	
-//	partial class BitmapPool
-//	{
-//	    protected override void Free(Java.Lang.Object obj)
-//	    {
-//	        Free(Android.Runtime.Extensions.JavaCast<Android.Graphics.Bitmap>(obj));
-//	    }
-//	
-//	    protected override Java.Lang.Object Alloc(int size)
-//	    {
-//	        return Android.Runtime.Extensions.JavaCast<Java.Lang.Object>(AllocBitmap(size));
-//	    }
-//	
-//	    protected override int GetBucketedSizeForValue(Java.Lang.Object obj)
-//	    {
-//	        return GetBucketedSizeForValue(Android.Runtime.Extensions.JavaCast<Android.Graphics.Bitmap>(obj));
-//	    }
-//	}
+	//	
+	//	partial class BitmapPool
+	//	{
+	//	    protected override void Free(Java.Lang.Object obj)
+	//	    {
+	//	        Free(Android.Runtime.Extensions.JavaCast<Android.Graphics.Bitmap>(obj));
+	//	    }
+	//	
+	//	    protected override Java.Lang.Object Alloc(int size)
+	//	    {
+	//	        return Android.Runtime.Extensions.JavaCast<Java.Lang.Object>(AllocBitmap(size));
+	//	    }
+	//	
+	//	    protected override int GetBucketedSizeForValue(Java.Lang.Object obj)
+	//	    {
+	//	        return GetBucketedSizeForValue(Android.Runtime.Extensions.JavaCast<Android.Graphics.Bitmap>(obj));
+	//	    }
+	//	}
 	//
-//		partial class NativeMemoryChunkPool {
-//
-//			protected override void Free(Java.Lang.Object obj) {
-//				Free(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Memory.NativeMemoryChunk>(obj));
-//			}
-//	
-//			protected override IMemoryChunk Alloc(int size) {
-//				var res = AllocChunk(size);
-//				return res;
-//			}
-//	
-//			protected override int GetBucketedSizeForValue(Java.Lang.Object obj) {
-//				return GetBucketedSizeForValue(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Memory.NativeMemoryChunk>(obj));
-//			}
-//		}
-//
-//
-//	partial class GenericByteArrayPool
-//	{
-//	    protected override void Free(Java.Lang.Object obj)
-//	    {
-//	        Free(obj.ToArray<byte>());
-//	    }
-//	
-//	    protected override Java.Lang.Object Alloc(int size)
-//	    {
-//	        var bytes = AllocBytes(size);
-//	
-//	        return Android.Runtime.JavaArray<byte>.FromArray<byte>(bytes);
-//	    }
-//	
-//	    protected override int GetBucketedSizeForValue(Java.Lang.Object obj)
-//	    {
-//	        return GetBucketedSizeForValue(obj.ToArray<byte>());
-//	    }
-//	}
+			partial class NativeMemoryChunkPool {
+		//				protected override Object AllocChunk(int p0) {
+		//				}
+
+				protected override Object Alloc(int p0) {
+					return Android.Runtime.Extensions.JavaCast<Java.Lang.Object>(AllocChunk(p0));
+				}
+
+
+		protected override void Free(Java.Lang.Object obj) {
+					Free(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Memory.NativeMemoryChunk>(obj));
+				}
+//		
+//				protected override IMemoryChunk Alloc(int size) {
+//					var res = Alloc(size);
+//					return res;
+//				}
+		
+				protected override int GetBucketedSizeForValue(Java.Lang.Object obj) {
+					return GetBucketedSizeForValue(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Memory.NativeMemoryChunk>(obj));
+				}
+			}
+	
+	
+	partial class GenericByteArrayPool
+	{
+	    protected override void Free(Java.Lang.Object obj)
+	    {
+	        Free(obj.ToArray<byte>());
+	    }
+	
+	    protected override Java.Lang.Object Alloc(int size)
+	    {
+	        var bytes = AllocBytes(size);
+	
+	        return Android.Runtime.JavaArray<byte>.FromArray<byte>(bytes);
+	    }
+	
+	    protected override int GetBucketedSizeForValue(Java.Lang.Object obj)
+	    {
+	        return GetBucketedSizeForValue(obj.ToArray<byte>());
+	    }
+	}
 
 	partial class DummyBitmapPool {
 		void IResourceReleaser.Release(Object p0) {
@@ -133,7 +140,8 @@ namespace Com.Facebook.Imagepipeline.Memory
 			return Android.Runtime.Extensions.JavaCast<Java.Lang.Object>(Get(i));
 		}
 	}
-	
+
+
 	//    partial class NativePooledByteBufferOutputStream
 	//    {
 	//        public override unsafe Com.Facebook.Common.Memory.IPooledByteBuffer ToByteBuffer()
@@ -159,9 +167,9 @@ namespace Com.Facebook.Imagepipeline.Memory
 	//            return CloneOrNull(Android.Runtime.Extensions.JavaCast<Com.Facebook.Common.References.CloseableReference>(closeableImage));
 	//        }
 	//    }
-	//
-	partial class EncodedCacheKeyMultiplexProducer
-	{
+//	//
+//	partial class EncodedCacheKeyMultiplexProducer
+//	{
 
 //	    protected override unsafe Java.Lang.Object GetKey(Com.Facebook.Imagepipeline.Producers.IProducerContext producerContext)
 //	    {
@@ -172,7 +180,7 @@ namespace Com.Facebook.Imagepipeline.Memory
 //	    {
 //	        return CloneOrNull(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Image.EncodedImage>(closeableImage));
 //	    }
-	}
+//	}
 	//    partial class PostprocessedBitmapMemoryCacheProducer
 	//    {
 	//        partial class CachedPostprocessorConsumer
