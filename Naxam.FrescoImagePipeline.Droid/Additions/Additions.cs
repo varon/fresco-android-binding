@@ -188,20 +188,21 @@ namespace Com.Facebook.Imagepipeline.Memory
 	//            return CloneOrNull(Android.Runtime.Extensions.JavaCast<Com.Facebook.Common.References.CloseableReference>(closeableImage));
 	//        }
 	//    }
-//	//
-//	partial class EncodedCacheKeyMultiplexProducer
-//	{
+	//
+	partial class EncodedCacheKeyMultiplexProducer
+	{
 
-//	    protected override unsafe Java.Lang.Object GetKey(Com.Facebook.Imagepipeline.Producers.IProducerContext producerContext)
-//	    {
-//	        return GetKeyPair(producerContext);
-//	    }
-//	
-//	    protected override unsafe Java.Lang.Object CloneOrNull(Java.Lang.Object closeableImage)
-//	    {
-//	        return CloneOrNull(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Image.EncodedImage>(closeableImage));
-//	    }
-//	}
+	    protected override unsafe Java.Lang.Object GetKey(Com.Facebook.Imagepipeline.Producers.IProducerContext producerContext)
+	    {
+	        return GetKeyPair(producerContext);
+	    }
+	
+	    protected override unsafe Java.Lang.Object CloneOrNull(Java.Lang.Object closeableImage)
+	    {
+	        return CloneOrNull(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Image.EncodedImage>(closeableImage));
+	    }
+	}
+
 	    partial class PostprocessedBitmapMemoryCacheProducer
 	    {
 	        partial class CachedPostprocessorConsumer
