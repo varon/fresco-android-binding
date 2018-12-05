@@ -3,14 +3,14 @@
     <metadata>
         <!-- Required elements-->
         <id>Naxam.FrescoImagePipelineBase.Droid</id>
-        <version>1.5.0</version>
+        <version>1.11.0</version>
         <authors>NAXAM CO.,LTD</authors>
         <owners>NAXAM CO.,LTD</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <title>Naxam - Fresco ImagePipelineBase for Android</title>
         <summary>Xamarin.Android Binding Library - Fresco ImagePipelineBase</summary>
         <description>Xamarin.Android Binding Library - Fresco ImagePipelineBase</description>
-        <releaseNotes>Fresco Android v1.5.0 - ImagePipelineBase</releaseNotes>
+        <releaseNotes>Fresco Android v1.11.0 - ImagePipelineBase</releaseNotes>
         <iconUrl>https://github.com/NAXAM/fresco-android-binding/tree/master/art/fresco_logo.png</iconUrl>
         <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
         <projectUrl>https://github.com/NAXAM/fresco-android-binding</projectUrl>
@@ -18,7 +18,7 @@
         <tags>Xamarin.Android, fresco</tags>
         <dependencies>
             <dependency id="Bolts" version="1.4.0.1" />
-            <dependency id="Naxam.FrescoCore.Droid" version="1.5.0" />
+            <dependency id="Naxam.FrescoCore.Droid" version="1.110" />
         </dependencies>
     </metadata>
     <!-- Optional 'files' node -->

@@ -3,22 +3,22 @@
     <metadata>
         <!-- Required elements-->
         <id>Naxam.FrescoCore.Droid</id>
-        <version>1.5.0</version>
+        <version>1.11.0</version>
         <authors>NAXAM CO.,LTD</authors>
         <owners>NAXAM CO.,LTD</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <title>Naxam - Fresco Core for Android</title>
         <summary>Xamarin.Android Binding Library - Fresco Core</summary>
         <description>Xamarin.Android Binding Library - Fresco Core</description>
-        <releaseNotes>Fresco Android v1.5.0</releaseNotes>
+        <releaseNotes>Fresco Android v1.11.0</releaseNotes>
         <iconUrl>https://github.com/NAXAM/fresco-android-binding/tree/master/art/fresco_logo.png</iconUrl>
         <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
         <projectUrl>https://github.com/NAXAM/fresco-android-binding</projectUrl>
         <copyright>Copyright (c) 2017 NAXAM</copyright>
         <tags>Xamarin.Android, fresco, fresco-core, fbcore, fresco-fbcore</tags>
         <dependencies>
-            <!-- <dependency id="Naxam.FrescoImagePipeline.Droid" version="1.5.0" />
-            <dependency id="Naxam.FrescoDrawee.Droid" version="1.5.0" /> -->
+            <!-- <dependency id="Naxam.FrescoImagePipeline.Droid" version="1.11.0" />
+            <dependency id="Naxam.FrescoDrawee.Droid" version="1.11.0" /> -->
         </dependencies>
     </metadata>
     <!-- Optional 'files' node -->
