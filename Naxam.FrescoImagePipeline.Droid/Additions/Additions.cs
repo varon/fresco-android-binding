@@ -170,6 +170,7 @@ namespace Com.Facebook.Imagepipeline.Memory
 	        return ToMemoryPooledByteBuffer();
 	    }
 	}
+
 	}
 	
 	namespace Com.Facebook.Imagepipeline.Producers
@@ -225,31 +226,31 @@ namespace Com.Facebook.Imagepipeline.Memory
 //	        }
 //	    }
 //	}
-	//    partial class MediaVariationsFallbackProducer
-	//    {
-	//        partial class MediaVariationsConsumer
-	//        {
-	//            protected override unsafe void OnNewResultImpl(Java.Lang.Object newResult, int status)
-	//            {
-	//                OnNewResultImpl(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Image.EncodedImage>(newResult), status);
-	//            }
-	//        }
-	//    }
-	//    partial class PostprocessorProducer
-	//    {
-	//        partial class RepeatedPostprocessorConsumer
-	//        {
-	//            protected override unsafe void OnNewResultImpl(Java.Lang.Object newResult, int status)
-	//            {
-	//                OnNewResultImpl(Android.Runtime.Extensions.JavaCast<Com.Facebook.Common.References.CloseableReference>(newResult), status);
-	//            }
-	//        }
-	//        partial class SingleUsePostprocessorConsumer
-	//        {
-	//            protected override unsafe void OnNewResultImpl(Java.Lang.Object newResult, int status)
-	//            {
-	//                OnNewResultImpl(Android.Runtime.Extensions.JavaCast<Com.Facebook.Common.References.CloseableReference>(newResult), status);
-	//            }
-	//        }
-	//    }
+//	    partial class MediaVariationsFallbackProducer
+//	    {
+//	        partial class MediaVariationsConsumer
+//	        {
+//	            protected override unsafe void OnNewResultImpl(Java.Lang.Object newResult, int status)
+//	            {
+//	                OnNewResultImpl(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Image.EncodedImage>(newResult), status);
+//	            }
+//	        }
+//	    }
+	partial class PostprocessorProducer
+	{
+	    partial class RepeatedPostprocessorConsumer
+	    {
+	        protected override unsafe void OnNewResultImpl(Java.Lang.Object newResult, int status)
+	        {
+	            OnNewResultImpl(Android.Runtime.Extensions.JavaCast<Com.Facebook.Common.References.CloseableReference>(newResult), status);
+	        }
+	    }
+	    partial class SingleUsePostprocessorConsumer
+	    {
+	        protected override unsafe void OnNewResultImpl(Java.Lang.Object newResult, int status)
+	        {
+	            OnNewResultImpl(Android.Runtime.Extensions.JavaCast<Com.Facebook.Common.References.CloseableReference>(newResult), status);
+	        }
+	    }
+	}
 }
