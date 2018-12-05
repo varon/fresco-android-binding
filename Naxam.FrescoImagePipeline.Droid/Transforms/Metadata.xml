@@ -7,6 +7,12 @@
     protected
   </attr>
   <attr
+      path="/api/package[@name='com.facebook.imagepipeline.datasource']/class[@name='BaseBitmapReferenceDataSubscriber']/method[@name='onNewResultImpl' and count(parameter)=1 and parameter[1][@type='com.facebook.datasource.DataSource&lt;com.facebook.common.references.CloseableReference&lt;com.facebook.imagepipeline.image.CloseableImage&gt;&gt;']]"
+      name="visibility">
+    protected
+  </attr>
+  
+  <attr
       path="/api/package[@name='com.facebook.imagepipeline.datasource']/class[@name='BaseListBitmapDataSubscriber']/method[@name='onNewResultImpl' and count(parameter)=1 and parameter[1][@type='com.facebook.datasource.DataSource&lt;java.util.List&lt;com.facebook.common.references.CloseableReference&lt;com.facebook.imagepipeline.image.CloseableImage&gt;&gt;&gt;']]"
       name="visibility">
     protected
