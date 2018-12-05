@@ -128,6 +128,10 @@ namespace Com.Facebook.Imagepipeline.Memory
 		void IPool.Release(Object p0) {
 			Release(Android.Runtime.Extensions.JavaCast<Android.Graphics.Bitmap>(p0));
 		}
+
+		Java.Lang.Object IPool.Get(int i) {
+			return Android.Runtime.Extensions.JavaCast<Java.Lang.Object>(Get(i));
+		}
 	}
 	
 	//    partial class NativePooledByteBufferOutputStream
