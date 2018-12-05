@@ -176,19 +176,20 @@ namespace Com.Facebook.Imagepipeline.Memory
 	
 	namespace Com.Facebook.Imagepipeline.Producers
 	{
-	//    partial class BitmapMemoryCacheKeyMultiplexProducer
-	//    {
-	//        protected override unsafe Java.Lang.Object GetKey(Com.Facebook.Imagepipeline.Producers.IProducerContext producerContext)
-	//        {
-	//            return GetKeyPair(producerContext);
-	//        }
-	//
-	//        protected override unsafe Java.Lang.Object CloneOrNull(Java.Lang.Object closeableImage)
-	//        {
-	//            return CloneOrNull(Android.Runtime.Extensions.JavaCast<Com.Facebook.Common.References.CloseableReference>(closeableImage));
-	//        }
-	//    }
-	//
+
+	partial class BitmapMemoryCacheKeyMultiplexProducer
+	{
+	    protected override unsafe Java.Lang.Object GetKey(Com.Facebook.Imagepipeline.Producers.IProducerContext producerContext)
+	    {
+	        return GetKeyPair(producerContext);
+	    }
+	
+	    protected override unsafe Java.Lang.Object CloneOrNull(Java.Lang.Object closeableImage)
+	    {
+	        return CloneOrNull(Android.Runtime.Extensions.JavaCast<Com.Facebook.Common.References.CloseableReference>(closeableImage));
+	    }
+	}
+	
 	partial class EncodedCacheKeyMultiplexProducer
 	{
 
