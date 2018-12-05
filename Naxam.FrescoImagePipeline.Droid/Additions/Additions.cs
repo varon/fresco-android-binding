@@ -83,30 +83,51 @@ namespace Com.Facebook.Imagepipeline.Memory
 	//	    }
 	//	}
 	//
-			partial class NativeMemoryChunkPool {
-		//				protected override Object AllocChunk(int p0) {
-		//				}
+	partial class NativeMemoryChunkPool {
 
-				protected override Object Alloc(int p0) {
-					return Android.Runtime.Extensions.JavaCast<Java.Lang.Object>(AllocChunk(p0));
-				}
+		protected override Object Alloc(int p0) {
+			return Android.Runtime.Extensions.JavaCast<Java.Lang.Object>(AllocChunk(p0));
+		}
 
 
 		protected override void Free(Java.Lang.Object obj) {
-					Free(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Memory.NativeMemoryChunk>(obj));
-				}
-//		
-//				protected override IMemoryChunk Alloc(int size) {
-//					var res = Alloc(size);
-//					return res;
-//				}
+			Free(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Memory.NativeMemoryChunk>(obj));
+		}
+
+		protected override int GetBucketedSizeForValue(Java.Lang.Object obj) {
+			return GetBucketedSizeForValue(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Memory.NativeMemoryChunk>(obj));
+		}
+	}
+
+	partial class BufferMemoryChunkPool {
+		protected override Object Alloc(int p0) {
+			return Android.Runtime.Extensions.JavaCast<Java.Lang.Object>(AllocChunk(p0));
+		}
+
+
+		protected override void Free(Java.Lang.Object obj) {
+			Free(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Memory.NativeMemoryChunk>(obj));
+		}
+
+		protected override int GetBucketedSizeForValue(Java.Lang.Object obj) {
+			return GetBucketedSizeForValue(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Memory.NativeMemoryChunk>(obj));
+		}
+	}
+
+
+	partial class BucketsBitmapPool {
 		
-				protected override int GetBucketedSizeForValue(Java.Lang.Object obj) {
-					return GetBucketedSizeForValue(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Memory.NativeMemoryChunk>(obj));
-				}
-			}
-	
-	
+
+		protected override void Free(Java.Lang.Object obj) {
+			Free(Android.Runtime.Extensions.JavaCast<Android.Graphics.Bitmap>(obj));
+		}
+
+		protected override int GetBucketedSizeForValue(Java.Lang.Object obj) {
+			return GetBucketedSizeForValue(Android.Runtime.Extensions.JavaCast<Android.Graphics.Bitmap>(obj));
+		}
+	}
+
+
 	partial class GenericByteArrayPool
 	{
 	    protected override void Free(Java.Lang.Object obj)
@@ -151,10 +172,10 @@ namespace Com.Facebook.Imagepipeline.Memory
 	//
 	//    }
 	//
-	//}
-	//
-	//namespace Com.Facebook.Imagepipeline.Producers
-	//{
+	}
+	
+	namespace Com.Facebook.Imagepipeline.Producers
+	{
 	//    partial class BitmapMemoryCacheKeyMultiplexProducer
 	//    {
 	//        protected override unsafe Java.Lang.Object GetKey(Com.Facebook.Imagepipeline.Producers.IProducerContext producerContext)
@@ -181,29 +202,29 @@ namespace Com.Facebook.Imagepipeline.Memory
 //	        return CloneOrNull(Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Image.EncodedImage>(closeableImage));
 //	    }
 //	}
-	//    partial class PostprocessedBitmapMemoryCacheProducer
-	//    {
-	//        partial class CachedPostprocessorConsumer
-	//        {
-	//            protected override unsafe void OnNewResultImpl(Java.Lang.Object newResult, int status)
-	//            {
-	//                OnNewResultImpl(Android.Runtime.Extensions.JavaCast<Com.Facebook.Common.References.CloseableReference>(newResult), status);
-	//            }
-	//        }
-	//    }
-	//    partial class MediaVariationsFallbackProducer
-	//    {
-	//        partial class VariantComparator
-	//        {
-	//            int Java.Util.IComparator.Compare(Java.Lang.Object l, Java.Lang.Object r)
-	//            {
-	//                return Compare(
-	//                    Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Request.MediaVariations.Variant>(l),
-	//                    Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Request.MediaVariations.Variant>(r)
-	//                );
-	//            }
-	//        }
-	//    }
+	    partial class PostprocessedBitmapMemoryCacheProducer
+	    {
+	        partial class CachedPostprocessorConsumer
+	        {
+	            protected override unsafe void OnNewResultImpl(Java.Lang.Object newResult, int status)
+	            {
+	                OnNewResultImpl(Android.Runtime.Extensions.JavaCast<Com.Facebook.Common.References.CloseableReference>(newResult), status);
+	            }
+	        }
+	    }
+//	partial class MediaVariationsFallbackProducer
+//	{
+//	    partial class VariantComparator
+//	    {
+//	        int Java.Util.IComparator.Compare(Java.Lang.Object l, Java.Lang.Object r)
+//	        {
+//	            return Compare(
+//	                Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Request.MediaVariations.Variant>(l),
+//	                Android.Runtime.Extensions.JavaCast<Com.Facebook.Imagepipeline.Request.MediaVariations.Variant>(r)
+//	            );
+//	        }
+//	    }
+//	}
 	//    partial class MediaVariationsFallbackProducer
 	//    {
 	//        partial class MediaVariationsConsumer
